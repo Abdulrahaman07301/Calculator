@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        width: 350px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: xx-large;
+    }
+    button{
+        width: 100px;
+        height: 60px;
+        border-radius: 20px;
+        background-color: goldenrod;
+        color: black;
+        font-size: xx-large;
+    }
+    .box{
+        display: grid;
+        grid-template-columns: 70px 70px 70px 70px;
+        gap: 50px;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h1{
+        color: black;
+    }
+</style>
+<body>
+    <title>CALCULATOR</title>
+    <h1 id="demo"> CALCULATOR</h1>
+    <input type="text" id="inp">
+    <div class="box">
+        <button onclick="appendNo(1)">1</button>
+        <button onclick="appendNo(2)">2</button>
+        <button onclick="appendNo(3)">3</button>
+        <button onclick="appendNo(4)">4</button>
+        <button onclick="appendNo(5)">5</button>
+        <button onclick="appendNo(6)">6</button>
+        <button onclick="appendNo(7)">7</button>
+        <button onclick="appendNo(8)">8</button>
+        <button onclick="appendNo(9)">9</button>
+        <button onclick="appendNo(0)">0</button>
+        <button onclick="appendNo('+')">+</button>
+        <button onclick="appendNo('-')">-</button>
+        <button onclick="appendNo('*')">*</button>
+        <button onclick="appendNo('/')">/</button>
+        <button onclick="appendNo('%')">%</button>
+        <button onclick="clr()">Clear</button>
+        <button onclick="res()">=</button>
+    </div>
+</body>
+<script>
+    function appendNo(n)
+    {
+        document.getElementById("inp").value = document.getElementById("inp").value + n;
+    }
+    function res()
+    {
+        var inpres = eval(document.getElementById("inp").value)
+        document.getElementById("inp").value = inpres;
+    }
+    function clr()
+    {
+        document.getElementById("inp").value =""
+    }
+</script>
+</html>
